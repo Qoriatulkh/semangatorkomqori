@@ -1,3 +1,21 @@
+// Buatlah program untuk mengklasifikasikan nilai siswa sesuai rentang berikut:
+
+    0–50: tidak lulus
+    51–70: remedial
+    71–100: lulus
+
+Contoh Masukan
+
+85
+
+Contoh Keluaran
+
+lulus
+
+//
+
+
+
 global main
 extern scanf
 extern printf

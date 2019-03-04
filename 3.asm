@@ -1,3 +1,16 @@
+//
+Buatlah program untuk menghitung penambahan bilangan kelipatan lima dari 0 hingga n.
+
+Misal n = 18, maka hasil penambahan: 0 + 5 + 10 + 15 = 30
+Contoh Masukan
+
+18
+
+Contoh Keluaran
+
+30
+
+//
 global main
 extern scanf
 extern printf
@@ -31,8 +44,9 @@ L2 : push eax
 	 push hasil
 	 call printf
 	 add esp,8
+	 JMP exit
 	
-	exit: 
+exit: 
 	push 0
     call fflush
 	mov eax, 1

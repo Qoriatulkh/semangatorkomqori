@@ -1,3 +1,16 @@
+// Buatlah program untuk menghitung luas segitiga dari masukan panjang alas dan tinggi yang diberikan.
+Contoh Masukan
+
+4 5
+
+Contoh Keluaran
+
+10
+
+//
+
+
+
 global main
 extern scanf
 extern printf
