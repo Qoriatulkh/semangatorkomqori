@@ -1,51 +1,30 @@
-// Buatlah program untuk menghitung luas segitiga dari masukan panjang alas dan tinggi yang diberikan.
-Contoh Masukan
-
-4 5
-
-Contoh Keluaran
-
-10
-
-//
-
-
-
 global main
-extern scanf
-extern printf
-extern fflush
+extern scanf, printf
 
 section .data
-	msg db "%d %d",0
-	luas db "%d", 10,0
-	m dw 2
-
+	r dd 4.8
+	fmt_out db "%f", 10, 0
+	
 section .bss
-	a resd 1
-	b resd 1
+	L resq 1
 
 section .text
-main:
-	push a
-	push b
-	push msg
-	call scanf
-	add esp, 12
+	main:
+			fldpi 
+			fmul dword [r]
+			fmul dword [r]
+			fstp qword[L]
 	
-	mov eax, [a]
-	mul dword [b]
-	cdq
-	div dword [m]
-	
-	push eax
-	push luas
-	call printf
-	add esp, 8
-	
-exit:
-	push 0
-    call fflush     
-    mov eax, 1
-	mov ebx, 0
-	int 0x80
+			push L
+			push r
+			call scanf
+			add esp, 8
+
+			push dword [L+4]
+			push dword [L]
+			push fmt_out
+			call printf
+			add esp, 12
+			
+			mov eax, 0
+			ret
